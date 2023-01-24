@@ -1,0 +1,96 @@
+:root {
+    --container-width: 1024px;
+    --container-height: 768px;
+    --spining-linear-gradient: linear-gradient(90deg, rgba(251, 93, 173, 1) 0%, rgba(85, 251, 159, 1) 50%, rgba(185, 122, 255, 1) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: var(--container-width);
+    height: var(--container-height);
+    background-color: #050210;
+    position: absolute;
+    top: calc(50% - (var(--container-height) / 2));
+    left: calc(50% - (var(--container-width) / 2));
+}
+
+.first {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(50% - (350px / 2));
+    left: calc(50% - (350px / 2));
+}
+
+.first::before {
+    content: "";
+    background: var(--spining-linear-gradient);
+    border-radius: 100%;
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    top: calc(50% - (350px / 2));
+    left: calc(50% - (350px / 2));
+    filter: blur(30px);
+    animation: spin 1s infinite linear;
+}
+
+.second {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: calc(50% - (350px / 2));
+    left: calc(50% - (350px / 2));
+    border-radius: 100%;
+    background: rgb(251, 93, 173);
+    background: var(--spining-linear-gradient);
+    animation: spin 1s infinite linear;
+}
+
+.third {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: #050210;
+    position: absolute;
+    top: calc(50% - (300px / 2));
+    left: calc(50% - (300px / 2));
+}
+.forth {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: #042f66;
+    position: absolute;
+    top: calc(50% - (300px / 2));
+    left: calc(50% - (300px / 2));
+    background-size: 100%;
+    animation: ripple 1.5s infinite ease-in-out;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ripple {
+        0% {
+            opacity: .25;
+            transform: scale(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(1);
+        }
+    }
